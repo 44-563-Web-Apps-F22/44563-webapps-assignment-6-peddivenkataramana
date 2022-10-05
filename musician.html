@@ -21,16 +21,20 @@
     <input type ="text" id="form1_nick" name="form1_nick" autofocus> <br>
 
     <input type="button" onclick="checkGuess()" value="Check the guess">
+ 
 </form>
 
 
 <p id="result">This text will be replaced </p>
-
+<div class = container>
+    <img id="image" src="Earthworm.JPG" class="img-fluid" alt="Earthworm" height="100" width="100" onclick="swapImage()">
+</div>
 <script> 
 
 correct = 0
 wrong = 0
-
+useImage = 1
+ 
 function checkGuess (){
 
     console.log("Getting form values")
@@ -50,8 +54,41 @@ function checkGuess (){
         alert("Wrong Musician")
         out.innerHTML = "Wrong answer: "+ wrong+" Correct answer: "+ correct
     }
-}
-</script>
+ }
+           function swapImage() {
+            image = document.getElementById("image")
+            switch (useImage) {
+                case 1:
+                image.src = "Sympetrum_flaveolum_-_side_(aka).jpg";
+                    useImage = useImage + 1
+                    break;
+                case 2:
+                    image.src = "closeup-of-inchworm.jpg";
+                    useImage = useImage + 1
+                    break;
+                case 3:
+                    
+                    image.src = "Earthworm.JPG";
+                    useImage = useImage + 1
+                    break;
+                default:
+                    break;
+            }
+       
+        }
+ </script>
+
+
+
+
+
+
+
+ 
+
+
+  
+
 
 </body>
 </html> 
