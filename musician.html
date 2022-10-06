@@ -17,7 +17,14 @@
 </head>
 
 <body>
-    <h1>Musician guess by Venkataramana Peddi</h1>
+    <div
+  class="bg-image d-flex justify-content-center align-items-center"
+  style="
+    background-image: url('https://mdbcdn.b-cdn.net/img/new/fluid/nature/015.webp');
+    height: 100vh;
+  "
+>
+    <h1 style="color: white;">Musician guess by Venkataramana Peddi</h1>
 
    
     <form style="width: 300px;">
@@ -35,11 +42,13 @@
             <button type="button" class="btn btn-secondary" onclick="checkGuess()" value="Check the guess">Submit</button>
         </div> <br>
         <div class="form-check">
-            <p id="result"> </p>
+            <p style="color: aliceblue;id="result"> </p>
         </div>
     </form>
     
+    
     <div class="container">
+        
         <img src="Earthworm.JPG" id="image" onclick="swapImage()" alt="netwing" style="width: 100px;height: 100px;">
     </div>
 
@@ -60,13 +69,14 @@
                 alert("You got it right")
                 correct = correct + 1
                 out.innerHTML = "Correct answer: " + correct + " Wrong answer: " + wrong
-            } else if (wrong >= 3) {
-                document.getElementById("btn").onclick = Alert();
-                out.innerHTML = "Correct answer: " + correct + " Wrong answer: " + wrong;
-            }
+            }  
             else {
                 alert("Wrong Musician");
                 wrong = wrong + 1
+                out.innerHTML = "Correct answer: " + correct + " Wrong answer: " + wrong;
+            }
+            if (wrong >= 3) {
+                document.getElementById("btn").onclick = Alert();
                 out.innerHTML = "Correct answer: " + correct + " Wrong answer: " + wrong;
             }
         }

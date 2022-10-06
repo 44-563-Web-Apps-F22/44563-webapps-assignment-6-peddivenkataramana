@@ -11,10 +11,10 @@
 <div class="container">
     <form>
        
-        <input type="checkbox" id="air" name="vacation" value="true">
+        <input type="checkbox" id="air" name="vacation" value="false">
         <label for="air">Travel by Air</label> <br>
      
-        <input type="checkbox" id="domestic" name="vacation" value="true">
+        <input type="checkbox" id="domestic" name="vacation" checked value="true">
         <label for="domestic">Domestic</label> <br>
     
         <input type="checkbox" id="resort" name="vacation" value="false">
@@ -46,32 +46,9 @@
         let airtravel=document.getElementById("air").checked
         let domestictravel=document.getElementById("domestic").checked
         let resorttravel=document.getElementById("resort").checked
-    
-        if(airtravel)
-        {
-            my_vacation.air=true;
-        }
-        else
-        {
-            my_vacation.air=false;
-        }
-        if(domestictravel)
-        {
-            my_vacation.domestic=true;
-        }
-        else
-        {
-            my_vacation.domestic=false;
-        }
-        if(resorttravel)
-        {
-            my_vacation.resort=true;
-        }
-        else
-        {
-            my_vacation.resort=false;
-        }
-        
+        my_vacation.airtravel = airtravel
+        my_vacation.domestictravel = domestictravel
+        my_vacation.resorttravel = resorttravel
     
         document.getElementById("result").innerHTML=JSON.stringify(my_vacation)
     }
